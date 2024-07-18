@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+const cron = require("node-cron");
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -11,6 +11,11 @@ const app = express();
 app.use(express.json());
 
 app.use(cors());
+
+cron.schedule("*/5 * * * *", () => {
+  console.log("See you next 5 minutes");
+});
+
 
 app.use((req, res, next) => {
   console.log(req.path, req.method);
