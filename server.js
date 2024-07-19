@@ -12,8 +12,8 @@ app.use(express.json());
 
 app.use(cors());
 
-cron.schedule("*/5 * * * *", () => {
-  console.log("See you next 5 minutes");
+cron.schedule("*/1 * * * *", () => {
+  console.log("See you next 1 minutes");
 });
 
 
